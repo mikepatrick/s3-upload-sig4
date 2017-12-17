@@ -1,0 +1,16 @@
+{ "expiration": "2017-12-18T12:00:00.000Z",
+  "conditions": [
+    {"bucket": "<YOUR_BUCKET_NAME>"},
+    ["starts-with", "$key", "user/user1/"],
+    {"acl": "public-read"},
+    {"success_action_redirect": "http://localhost:9000/index.html"},
+    ["starts-with", "$Content-Type", "image/"],
+    {"x-amz-meta-uuid": "14365123651274"},
+    {"x-amz-server-side-encryption": "AES256"},
+    ["starts-with", "$x-amz-meta-tag", ""],
+
+    {"x-amz-credential": "<YOUR_ACCESS_KEY>/20171217/us-east-1/s3/aws4_request"},
+    {"x-amz-algorithm": "AWS4-HMAC-SHA256"},
+    {"x-amz-date": "20171217T000000Z" }
+  ]
+}
